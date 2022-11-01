@@ -1,8 +1,9 @@
-window.onload = function() {
+window.onload = function () {
 
     // Declare variables
     let container = document.querySelector("#container");
     let letHimChoose = document.querySelector("#letHimChoose");
+    let letHimChooseContainer = document.querySelector("#letHimChoose-container");
     letHimChoose.style.display = "none";
     let chooseBtn = document.getElementsByClassName("chooseBtn");
     let user = "";
@@ -16,6 +17,7 @@ window.onload = function() {
     let column3 = document.getElementsByClassName("column3");
     let x1 = document.getElementsByClassName("x1");
     let x2 = document.getElementsByClassName("x2");
+    let winSpan = document.querySelector("#winSpan");
 
     let emptyBoxes = [];
 
@@ -27,7 +29,7 @@ window.onload = function() {
         container.style.opacity = "0.5"
         letHimChoose.style.display = "";
         for (b of chooseBtn) {
-            b.addEventListener("click", function() {
+            b.addEventListener("click", function () {
                 user = this.innerHTML;
                 if (user == "x") {
                     system = "o"
@@ -47,7 +49,7 @@ window.onload = function() {
 
                 function disapear() {
                     container.style.opacity = "1"
-                    letHimChoose.style.display = "none";
+                    letHimChooseContainer.style.display = "none";
                 }
 
                 function firstFill() {
@@ -65,7 +67,7 @@ window.onload = function() {
                 console.log(emptyBoxes);
 
                 for (let b of boxes) {
-                    b.addEventListener("click", function() {
+                    b.addEventListener("click", function () {
 
                         this.innerHTML = user;
                         this.disabled = true;
@@ -84,24 +86,25 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of row1) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
                                     // break checker;
 
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of row1) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins")
                                     return "finish";
 
                                     // break checker;
@@ -118,24 +121,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of row2) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins")
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of row2) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins")
                                     return "finish";
 
                                     // break checker;
@@ -152,24 +157,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of row3) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of row3) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;
@@ -186,24 +193,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of column1) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of column1) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;
@@ -220,24 +229,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of column2) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of column2) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;
@@ -254,24 +265,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of column3) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of column3) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;
@@ -288,24 +301,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of x1) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of x1) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;
@@ -322,24 +337,26 @@ window.onload = function() {
                                 }
                                 if (m.length == 3 && m.indexOf("u") == -1) {
                                     for (let s of x2) {
-                                        s.style.backgroundColor = "red";
+                                        s.style.backgroundColor = "#e35d6a";
+                                        winSpan.innerHTML = "System Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("System wins");
                                     return "finish";
 
                                     // break checker;
                                 }
                                 if (m.length == 3 && m.indexOf("s") == -1) {
                                     for (let s of x2) {
-                                        s.style.backgroundColor = "green";
+                                        s.style.backgroundColor = "#20c997";
+                                        winSpan.innerHTML = "User Wins";
+
                                     }
                                     for (let d of boxes) {
                                         d.disabled = true;
                                     }
-                                    alert("User wins");
                                     return "finish";
 
                                     // break checker;

@@ -4,21 +4,36 @@
 }
 
 body {
-    background-color: rgb(230, 230, 230);
-    position: relative;
-}
-
-#letHimChoose {
-    position: absolute;
-    top: calc(50% - 105px);
-    left: calc(50% - 250px);
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
+    align-items: center;
+    background-color: #06281e;
+    position: relative;
+}
+
+#letHimChoose-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#letHimChoose {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
     height: 210px;
     border-radius: 40px;
-    background-color: #fff;
+    background-color: #d2f4ea;
     text-align: center;
     z-index: 1;
 }
@@ -32,41 +47,46 @@ body {
 }
 
 .chooseBtn {
-    display: inline-block;
-    border: 1px solid rgb(92, 92, 92);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(31, 46, 46);
     width: 120px;
     height: 50px;
     margin: 20px 10px;
-    font-size: 40px;
+    font-size: 33px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #d2f4ea;
 }
 
 .chooseBtn:hover {
-    background-color: rgb(188, 188, 188);
+    background-color: rgb(31, 46, 46);
+    color: aliceblue;
 }
 
 #container {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    margin: 50px 50px;
-    width: 450px;
+    width: 90%;
+    max-width: 450px;
     height: 450px;
-    border-radius: 10%;
-    box-shadow: 5px 5px 10px 10px rgb(146, 146, 146);
-    background-color: rgb(31, 31, 33);
 }
 
 .grid-item {
-    width: 150px;
+    box-sizing: content-box;
     height: 150px;
     color: #fff;
-    font-size: 100px;
-    background-color: rgb(62, 62, 64);
-    border: 2px solid rgb(214, 214, 214);
+    font-size: 60px;
+    background-color: #13795b;
+    border: 2px solid rgb(31, 46, 46);
     border-top: none;
     border-right: none;
+}
+
+.grid-item:hover {
+    background-color: #1aa179;
+    color: #373737;
 }
 
 .i7,
@@ -81,6 +101,8 @@ body {
     border-left: none;
 }
 
-.grid-item:hover {
-    background-color: rgb(60, 60, 187);
+#winSpan {
+    font-size: 25px;
+    color: #d2f4ea;
+    margin-top: 20px;
 }
